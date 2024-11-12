@@ -1,0 +1,421 @@
+$hero-color: #04395e;
+$text-color: rgba(255, 255, 255, 0.5);
+$active-color: #ffffff;
+$underline-color: rgb(255, 255, 255);
+$hover-color: rgb(255 255 255 / 10%);
+
+html {
+
+    scroll-behavior: smooth;
+
+    body {
+       
+        background-color: $hero-color;
+        background-image:
+            linear-gradient(0deg, rgba(0, 0, 0, 0.1) 3px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.1) 3px, transparent 1px);
+        background-size: 20px 20px;
+        overflow: hidden;
+
+
+
+        .hero {
+            .container-x {
+
+                height: 100vh;
+                padding-inline: 4rem;
+                display: flex;
+
+                .left-col {
+                    position: sticky;
+                    top: 0;
+                    height: 100vh;
+                    padding-right: 1rem;
+                    /* Other styling as needed */
+
+                    .hero-title {
+                        font-size: 3rem;
+                        font-family: cursive;
+                        position: absolute;
+                        top: 100px;
+                    }
+
+                    .hero-role {
+                        font-size: 2rem;
+                        font-family: monospace;
+                        position: absolute;
+                        top: 160px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        border-right: 3px solid rgba(255, 255, 255, 0.75);
+                        /* Blinking cursor effect */
+                        animation: blinkCursor 0.75s step-end infinite;
+
+                        @keyframes blinkCursor {
+                            50% {
+                                border-color: transparent;
+                            }
+                        }
+                    }
+
+                    @media (max-width: 1200px) {}
+
+                    .hero-description {
+                        font-size: 1rem;
+                        font-family: monospace;
+                        position: absolute;
+                        top: 230px;
+                        max-width: 390px;
+                        color: $text-color;
+                    }
+
+                    .sidebar {
+                        position: absolute;
+                        top: 360px;
+                        height: 100vh;
+
+                        ul {
+                            list-style: none;
+                            padding: 0;
+                        }
+
+                        .nav-item {
+                            margin-bottom: 20px;
+                            position: relative;
+
+                            a {
+                                color: $active-color;
+                                text-decoration: none;
+                                font-size: 18px;
+                                font-family: monospace;
+                                font-weight: 300;
+                                display: inline-block;
+                                padding-left: 10px;
+                                transition: color 0.7s ease;
+
+                                &:hover {
+                                    color: $active-color;
+                                    padding-left: 25px;
+                                    transition: color 0.3s ease;
+                                }
+                            }
+
+                            // Underline effect
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 0;
+                                height: 1px;
+                                background-color: $underline-color;
+                                transition: width 0.3s ease;
+                            }
+
+                            // Hover underline on non-active items
+                            &:hover::before {
+                                width: 20px;
+                            }
+
+                            // Active item styling
+                            &.active {
+                                a {
+                                    color: $active-color;
+                                    font-weight: bold;
+                                    padding-left: 25px;
+                                }
+
+                                &::before {
+                                    width: 20px; // Underline width for active item
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .social-contact {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    padding-block: 1rem;
+                    position: absolute;
+                    gap: 1.5rem;
+                    top: 500px;
+
+                    .icon {
+                        font-size: 2rem;
+
+                        &:hover {
+                            text-shadow: 0 0 10px $active-color;
+                        }
+                    }
+
+                }
+
+
+                .right-col {
+                    overflow-y: auto;
+                    /* Allows scrolling within the right column */
+                    height: 100vh;
+                    /* Ensures it takes up the full height */
+                    padding-right: 1rem;
+                    scrollbar-width: none;
+                    /* Hide scrollbar for Firefox */
+
+
+                    .right-col::-webkit-scrollbar {
+                        display: none;
+                        /* Hide scrollbar for Chrome, Safari, and Edge */
+                    }
+
+
+
+                    .about {
+                        margin-top: 115px;
+
+                        .about-title {
+                            margin-top: 25px;
+                            margin-bottom: 25px;
+                            text-decoration: underline;
+                            text-decoration-color: white;
+                            font-family: monospace;
+                        }
+
+                        .about-description {
+                            text-decoration: none;
+                            font-family: monospace;
+                            color: $text-color;
+                        }
+
+                    }
+
+                    .experience {
+                        margin-top: 20px;
+
+                        .experience-title {
+                            text-decoration: underline;
+                            text-decoration-color: white;
+                            font-family: monospace;
+                        }
+
+                        a {
+                            text-decoration: none;
+                        }
+
+                        .experience-card {
+                            background: transparent;
+                            border: none;
+                            transition: all .1s ease-in;
+
+                            &:hover {
+                                // box-shadow: 0 0 10px $active-color;
+                                background-color: $hover-color;
+                                backdrop-filter: blur(1.3px);
+                                -webkit-backdrop-filter: blur(1.3px);
+
+                            }
+
+                            .experience-duration {
+                                font-size: .75rem;
+                                font-family: monospace;
+                                margin: 1rem;
+                                color: $text-color;
+
+                            }
+
+                            .experience-role {
+                                margin-top: .75rem;
+                                margin-bottom: .25rem;
+                                font-family: monospace;
+                                font-weight: 700;
+
+                            }
+
+                            .experience-company {
+                                font-family: monospace;
+
+                            }
+
+                            .experience-description {
+                                margin-top: .75rem;
+                                font-family: monospace;
+                                color: $text-color;
+                            }
+
+                            .experience-techstack-container {
+
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: 10px;
+                                margin-top: 1rem;
+
+                                li {
+                                    list-style: none;
+                                }
+
+                                .experience-techstack {
+                                    font-size: .75rem;
+                                    padding: .25rem .75rem;
+                                    border-radius: 15px;
+                                    background-color: #a7d0ff88;
+                                    color: $active-color;
+                                }
+                            }
+
+
+                        }
+                    }
+
+                    .project {
+                        margin-top: 20px;
+
+                        .project-title {
+                            text-decoration: underline;
+                            text-decoration-color: white;
+                            font-family: monospace;
+                        }
+
+                        a {
+                            text-decoration: none;
+                        }
+
+                        .project-card {
+                            border: 1px solid transparent;
+                            background-color: transparent;
+
+
+
+                            &:hover {
+                                background-color: $hover-color;
+                                backdrop-filter: blur(1.3px);
+                                -webkit-backdrop-filter: blur(1.3px);
+
+                            }
+
+                            .project-image {
+                                img {
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+
+                            .project-content {
+                                margin-top: 20px;
+
+                                .project-heading {
+                                    font-family: monospace;
+                                    font-weight: 700;
+                                    color: white;
+                                    font-size: 18px;
+
+                                    .on-link {
+                                        margin-left: 10px;
+                                    }
+                                }
+
+                                .project-description {
+                                    margin-top: .75rem;
+                                    font-family: monospace;
+                                    color: $text-color;
+                                    margin-left: 25px;
+                                }
+
+                                .project-techstack-container {
+
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 10px;
+                                    margin-top: 1rem;
+
+                                    li {
+                                        list-style: none;
+                                    }
+
+                                    .project-techstack {
+                                        font-size: .75rem;
+                                        padding: .25rem .75rem;
+                                        border-radius: 15px;
+                                        background-color: #a7d0ff88;
+                                        color: $active-color;
+                                    }
+                                }
+                            }
+                        }
+
+
+
+                    }
+
+                    .end {
+                        font-size: 1rem;
+                        font-family: monospace;
+                        color: $active-color;
+                        margin-top: 30px;
+                        margin-bottom: 30px;
+                    }
+                }
+
+            }
+
+            @media (max-width: 1130px) {
+                .container-x {
+
+                    padding-inline: 2rem;
+
+                    .hero-title {
+                        font-size: 2.5rem !important;
+                    }
+
+                    .social-contact {
+                        top: 470px !important;
+                    }
+                }
+
+            }
+
+            @media (max-width: 992px) {
+                .container-x {
+                    padding-inline: 1rem;
+
+                    .hero-title {
+                        font-size: 2rem !important;
+                    }
+
+                    .hero-role {
+                        font-size: 1.3rem !important;
+                    }
+                }
+            }
+
+            @media (max-width: 840px) {
+                .container-x {
+                    padding-inline: 4rem;
+                    display: flex;
+
+                    .hero-title {
+                        font-size: 3rem;
+                    }
+
+                    .hero-role {
+                        font-size: 2rem;
+                    }
+
+                    .social-contact {
+                        top: 500px;
+                    }
+                    .left-col,
+                    .right-col {
+                        height: auto;
+                        padding-right: 0;
+                        padding-left: 0;
+                       
+                    }
+
+                }
+
+                
+            }
+        }
+    }
+}

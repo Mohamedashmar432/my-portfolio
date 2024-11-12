@@ -1,0 +1,311 @@
+html {
+  scroll-behavior: smooth;
+}
+html body {
+  background-color: #04395e;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 3px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.1) 3px, transparent 1px);
+  background-size: 20px 20px;
+  overflow: hidden;
+}
+html body .hero .container-x {
+  height: 100vh;
+  padding-inline: 4rem;
+  display: flex;
+}
+html body .hero .container-x .left-col {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding-right: 1rem;
+  /* Other styling as needed */
+}
+html body .hero .container-x .left-col .hero-title {
+  font-size: 3rem;
+  font-family: cursive;
+  position: absolute;
+  top: 100px;
+}
+html body .hero .container-x .left-col .hero-role {
+  font-size: 2rem;
+  font-family: monospace;
+  position: absolute;
+  top: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid rgba(255, 255, 255, 0.75);
+  /* Blinking cursor effect */
+  animation: blinkCursor 0.75s step-end infinite;
+}
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
+}
+html body .hero .container-x .left-col .hero-description {
+  font-size: 1rem;
+  font-family: monospace;
+  position: absolute;
+  top: 230px;
+  max-width: 390px;
+  color: rgba(255, 255, 255, 0.5);
+}
+html body .hero .container-x .left-col .sidebar {
+  position: absolute;
+  top: 360px;
+  height: 100vh;
+}
+html body .hero .container-x .left-col .sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+html body .hero .container-x .left-col .sidebar .nav-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+html body .hero .container-x .left-col .sidebar .nav-item a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: monospace;
+  font-weight: 300;
+  display: inline-block;
+  padding-left: 10px;
+  transition: color 0.7s ease;
+}
+html body .hero .container-x .left-col .sidebar .nav-item a:hover {
+  color: #ffffff;
+  padding-left: 25px;
+  transition: color 0.3s ease;
+}
+html body .hero .container-x .left-col .sidebar .nav-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 1px;
+  background-color: rgb(255, 255, 255);
+  transition: width 0.3s ease;
+}
+html body .hero .container-x .left-col .sidebar .nav-item:hover::before {
+  width: 20px;
+}
+html body .hero .container-x .left-col .sidebar .nav-item.active a {
+  color: #ffffff;
+  font-weight: bold;
+  padding-left: 25px;
+}
+html body .hero .container-x .left-col .sidebar .nav-item.active::before {
+  width: 20px;
+}
+html body .hero .container-x .social-contact {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-block: 1rem;
+  position: absolute;
+  gap: 1.5rem;
+  top: 500px;
+}
+html body .hero .container-x .social-contact .icon {
+  font-size: 2rem;
+}
+html body .hero .container-x .social-contact .icon:hover {
+  text-shadow: 0 0 10px #ffffff;
+}
+html body .hero .container-x .right-col {
+  overflow-y: auto;
+  /* Allows scrolling within the right column */
+  height: 100vh;
+  /* Ensures it takes up the full height */
+  padding-right: 1rem;
+  scrollbar-width: none;
+  /* Hide scrollbar for Firefox */
+}
+html body .hero .container-x .right-col .right-col::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar for Chrome, Safari, and Edge */
+}
+html body .hero .container-x .right-col .about {
+  margin-top: 115px;
+}
+html body .hero .container-x .right-col .about .about-title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-decoration: underline;
+  text-decoration-color: white;
+  font-family: monospace;
+}
+html body .hero .container-x .right-col .about .about-description {
+  text-decoration: none;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.5);
+}
+html body .hero .container-x .right-col .experience {
+  margin-top: 20px;
+}
+html body .hero .container-x .right-col .experience .experience-title {
+  text-decoration: underline;
+  text-decoration-color: white;
+  font-family: monospace;
+}
+html body .hero .container-x .right-col .experience a {
+  text-decoration: none;
+}
+html body .hero .container-x .right-col .experience .experience-card {
+  background: transparent;
+  border: none;
+  transition: all 0.1s ease-in;
+}
+html body .hero .container-x .right-col .experience .experience-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1.3px);
+  -webkit-backdrop-filter: blur(1.3px);
+}
+html body .hero .container-x .right-col .experience .experience-card .experience-duration {
+  font-size: 0.75rem;
+  font-family: monospace;
+  margin: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+html body .hero .container-x .right-col .experience .experience-card .experience-role {
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-family: monospace;
+  font-weight: 700;
+}
+html body .hero .container-x .right-col .experience .experience-card .experience-company {
+  font-family: monospace;
+}
+html body .hero .container-x .right-col .experience .experience-card .experience-description {
+  margin-top: 0.75rem;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.5);
+}
+html body .hero .container-x .right-col .experience .experience-card .experience-techstack-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+}
+html body .hero .container-x .right-col .experience .experience-card .experience-techstack-container li {
+  list-style: none;
+}
+html body .hero .container-x .right-col .experience .experience-card .experience-techstack-container .experience-techstack {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  background-color: rgba(167, 208, 255, 0.5333333333);
+  color: #ffffff;
+}
+html body .hero .container-x .right-col .project {
+  margin-top: 20px;
+}
+html body .hero .container-x .right-col .project .project-title {
+  text-decoration: underline;
+  text-decoration-color: white;
+  font-family: monospace;
+}
+html body .hero .container-x .right-col .project a {
+  text-decoration: none;
+}
+html body .hero .container-x .right-col .project .project-card {
+  border: 1px solid transparent;
+  background-color: transparent;
+}
+html body .hero .container-x .right-col .project .project-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1.3px);
+  -webkit-backdrop-filter: blur(1.3px);
+}
+html body .hero .container-x .right-col .project .project-card .project-image img {
+  width: 100%;
+  height: auto;
+}
+html body .hero .container-x .right-col .project .project-card .project-content {
+  margin-top: 20px;
+}
+html body .hero .container-x .right-col .project .project-card .project-content .project-heading {
+  font-family: monospace;
+  font-weight: 700;
+  color: white;
+  font-size: 18px;
+}
+html body .hero .container-x .right-col .project .project-card .project-content .project-heading .on-link {
+  margin-left: 10px;
+}
+html body .hero .container-x .right-col .project .project-card .project-content .project-description {
+  margin-top: 0.75rem;
+  font-family: monospace;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 25px;
+}
+html body .hero .container-x .right-col .project .project-card .project-content .project-techstack-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+}
+html body .hero .container-x .right-col .project .project-card .project-content .project-techstack-container li {
+  list-style: none;
+}
+html body .hero .container-x .right-col .project .project-card .project-content .project-techstack-container .project-techstack {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  background-color: rgba(167, 208, 255, 0.5333333333);
+  color: #ffffff;
+}
+html body .hero .container-x .right-col .end {
+  font-size: 1rem;
+  font-family: monospace;
+  color: #ffffff;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+@media (max-width: 1130px) {
+  html body .hero .container-x {
+    padding-inline: 2rem;
+  }
+  html body .hero .container-x .hero-title {
+    font-size: 2.5rem !important;
+  }
+  html body .hero .container-x .social-contact {
+    top: 470px !important;
+  }
+}
+@media (max-width: 992px) {
+  html body .hero .container-x {
+    padding-inline: 1rem;
+  }
+  html body .hero .container-x .hero-title {
+    font-size: 2rem !important;
+  }
+  html body .hero .container-x .hero-role {
+    font-size: 1.3rem !important;
+  }
+}
+@media (max-width: 840px) {
+  html body .hero .container-x {
+    padding-inline: 4rem;
+    display: flex;
+  }
+  html body .hero .container-x .hero-title {
+    font-size: 3rem;
+  }
+  html body .hero .container-x .hero-role {
+    font-size: 2rem;
+  }
+  html body .hero .container-x .social-contact {
+    top: 500px;
+  }
+  html body .hero .container-x .left-col,
+  html body .hero .container-x .right-col {
+    height: auto;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
