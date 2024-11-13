@@ -21,7 +21,7 @@ html body .hero .container-x .left-col {
 }
 html body .hero .container-x .left-col .hero-title {
   font-size: 3rem;
-  font-family: cursive;
+  font-family: monospace;
   position: absolute;
   top: 100px;
 }
@@ -264,8 +264,8 @@ html body .hero .container-x .right-col .end {
   font-size: 1rem;
   font-family: monospace;
   color: #ffffff;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 @media (max-width: 1130px) {
   html body .hero .container-x {
