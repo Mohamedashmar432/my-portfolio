@@ -127,6 +127,9 @@ html body .hero .container-x .right-col .right-col::-webkit-scrollbar {
   display: none;
   /* Hide scrollbar for Chrome, Safari, and Edge */
 }
+html body .hero .container-x .right-col .mobile-hero {
+  display: none;
+}
 html body .hero .container-x .right-col .about {
   margin-top: 115px;
 }
@@ -286,25 +289,108 @@ html body .hero .container-x .right-col .end {
     font-size: 1.3rem !important;
   }
 }
-@media (max-width: 840px) {
+@media (max-width: 990px) {
+  html body .hero .d-md-block {
+    display: block !important;
+  }
+  html body .hero .d-md-none {
+    display: none !important;
+  }
+  html body .hero .text-md-center {
+    text-align: center !important;
+  }
   html body .hero .container-x {
     padding-inline: 4rem;
-    display: flex;
   }
-  html body .hero .container-x .hero-title {
+  html body .hero .container-x .left-col {
+    display: none !important;
+  }
+  html body .hero .container-x .mobile-hero {
+    display: contents !important;
+  }
+  html body .hero .container-x .mobile-hero .mobile-hero-title {
     font-size: 3rem;
+    font-family: cursive;
+    margin-top: 4rem;
   }
-  html body .hero .container-x .hero-role {
+  html body .hero .container-x .mobile-hero .mobile-hero-role {
+    font-size: 2rem;
+    font-family: monospace;
+    white-space: nowrap;
+  }
+  html body .hero .container-x .mobile-hero .mobile-hero-description {
+    font-size: 1rem;
+    font-family: monospace;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  html body .hero .container-x .mobile-hero .mobile-sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  html body .hero .container-x .mobile-hero .mobile-sidebar .mobile-nav-item {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  html body .hero .container-x .mobile-hero .mobile-sidebar .mobile-nav-item a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: 300;
+    display: inline-block;
+    padding-left: 10px;
+    transition: color 0.7s ease;
+  }
+  html body .hero .container-x .mobile-hero .mobile-sidebar .mobile-nav-item a:hover {
+    color: #ffffff;
+    padding-left: 25px;
+    transition: color 0.3s ease;
+  }
+  html body .hero .container-x .mobile-hero .mobile-sidebar .mobile-nav-item::before {
+    content: "";
+    transform: translateY(-50%);
+    width: 0;
+    height: 1px;
+    background-color: rgb(255, 255, 255);
+    transition: width 0.3s ease;
+  }
+  html body .hero .container-x .mobile-hero .mobile-sidebar .mobile-nav-item:hover::before {
+    width: 20px;
+  }
+  html body .hero .container-x .mobile-hero .mobile-sidebar .mobile-nav-item.active a {
+    color: #ffffff;
+    font-weight: bold;
+    padding-left: 25px;
+  }
+  html body .hero .container-x .mobile-hero .mobile-sidebar .mobile-nav-item.active::before {
+    width: 20px;
+  }
+  html body .hero .container-x .mobile-hero .mobile-social-contact {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-block: 1rem;
+    gap: 1.5rem;
+  }
+  html body .hero .container-x .mobile-hero .mobile-social-contact .icon {
     font-size: 2rem;
   }
-  html body .hero .container-x .social-contact {
-    top: 500px;
+  html body .hero .container-x .mobile-hero .mobile-social-contact .icon:hover {
+    text-shadow: 0 0 10px #ffffff;
   }
-  html body .hero .container-x .left-col,
-  html body .hero .container-x .right-col {
-    height: auto;
-    padding-right: 0;
-    padding-left: 0;
+  html body .hero .container-x .about {
+    margin-top: 10px !important;
+  }
+}
+@media (max-width: 560px) {
+  html body .hero .container-x {
+    padding-inline: 2rem;
+  }
+  html body .hero .container-x .mobile-hero .mobile-hero-title {
+    font-size: 2rem !important;
+  }
+  html body .hero .container-x .mobile-hero .mobile-hero-role {
+    font-size: 1.5rem !important;
   }
 }
 

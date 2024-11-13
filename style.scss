@@ -9,7 +9,7 @@ html {
     scroll-behavior: smooth;
 
     body {
-       
+
         background-color: $hero-color;
         background-image:
             linear-gradient(0deg, rgba(0, 0, 0, 0.1) 3px, transparent 1px),
@@ -161,6 +161,7 @@ html {
                     /* Ensures it takes up the full height */
                     padding-right: 1rem;
                     scrollbar-width: none;
+
                     /* Hide scrollbar for Firefox */
 
 
@@ -168,6 +169,12 @@ html {
                         display: none;
                         /* Hide scrollbar for Chrome, Safari, and Edge */
                     }
+
+                    .mobile-hero {
+                        display: none;
+                    }
+
+
 
 
 
@@ -388,33 +395,167 @@ html {
                 }
             }
 
-            @media (max-width: 840px) {
+            @media (max-width: 990px) {
+                .d-md-block {
+                    display: block !important;
+                }
+
+                .d-md-none {
+                    display: none !important;
+                }
+
+                .text-md-center {
+                    text-align: center !important;
+                }
+
+
                 .container-x {
                     padding-inline: 4rem;
-                    display: flex;
 
-                    .hero-title {
-                        font-size: 3rem;
-                    }
 
-                    .hero-role {
-                        font-size: 2rem;
+                    .left-col {
+                        display: none !important;
                     }
 
-                    .social-contact {
-                        top: 500px;
+                    .mobile-hero {
+                        display: contents !important;
+
+                        .mobile-hero-title {
+                            font-size: 3rem;
+                            font-family: cursive;
+                            margin-top: 4rem;
+
+                        }
+
+                        .mobile-hero-role {
+                            font-size: 2rem;
+                            font-family: monospace;
+                            white-space: nowrap;
+
+                        }
+
+
+
+                        .mobile-hero-description {
+                            font-size: 1rem;
+                            font-family: monospace;
+                            color: $text-color;
+                        }
+
+                        .mobile-sidebar {
+
+
+                            ul {
+                                list-style: none;
+                                padding: 0;
+                            }
+
+                            .mobile-nav-item {
+                                margin-bottom: 20px;
+                                position: relative;
+
+                                a {
+                                    color: $active-color;
+                                    text-decoration: none;
+                                    font-size: 18px;
+                                    font-family: monospace;
+                                    font-weight: 300;
+                                    display: inline-block;
+                                    padding-left: 10px;
+                                    transition: color 0.7s ease;
+
+                                    &:hover {
+                                        color: $active-color;
+                                        padding-left: 25px;
+                                        transition: color 0.3s ease;
+                                    }
+                                }
+
+                                // Underline effect
+                                &::before {
+                                    content: '';
+                                    transform: translateY(-50%);
+                                    width: 0;
+                                    height: 1px;
+                                    background-color: $underline-color;
+                                    transition: width 0.3s ease;
+                                }
+
+                                // Hover underline on non-active items
+                                &:hover::before {
+                                    width: 20px;
+                                }
+
+                                // Active item styling
+                                &.active {
+                                    a {
+                                        color: $active-color;
+                                        font-weight: bold;
+                                        padding-left: 25px;
+                                    }
+
+                                    &::before {
+                                        width: 20px; // Underline width for active item
+                                    }
+                                }
+                            }
+                        }
+
+
+                        .mobile-social-contact {
+                            display: flex;
+                            align-items: center;
+                            flex-wrap: wrap;
+                            padding-block: 1rem;
+
+                            gap: 1.5rem;
+
+
+                            .icon {
+                                font-size: 2rem;
+
+                                &:hover {
+                                    text-shadow: 0 0 10px $active-color;
+                                }
+                            }
+                        }
+
+
                     }
-                    .left-col,
-                    .right-col {
-                        height: auto;
-                        padding-right: 0;
-                        padding-left: 0;
-                       
+
+                    .about {
+                        margin-top: 10px !important;
                     }
+
 
                 }
 
-                
+
+            }
+
+            @media (max-width: 560px) {
+                .container-x {
+                    padding-inline: 2rem;
+
+                    .mobile-hero {
+                        .mobile-hero-title {
+                            font-size: 2rem !important;
+                        }
+
+                        .mobile-hero-role {
+                            font-size: 1.5rem !important;
+                        }
+
+                        // .mobile-hero-description{
+                        //     font-size: .5rem!important;
+                        // }
+                        // .mobile-social-contact{
+                        //     .icon{
+                        //         font-size: 1rem!important;
+                        //     }
+                        // }
+                    }
+                }
             }
         }
     }

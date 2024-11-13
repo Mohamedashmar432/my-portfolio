@@ -17,16 +17,16 @@
         <div class="container-x ">
             <div class="row">
 
-                <div class="col-md-6 col-lg-6 col-sm-12 left-col">
+                <div class="col-md-12 col-lg-6 col-sm-12 left-col custom-md-width">
                     <h1 class="text-start text-white hero-title">I'm Mohamed Ashmar</h1>
                     <p class="text-white hero-role" id="role">Web Developer</p>
                     <p class="hero-description">A passionate web developer and cybersecurity enthusiast,
                         dedicated to building innovative web solutions and safeguarding the digital world.</p>
                     <nav class="sidebar">
                         <ul>
-                            <li class="nav-item"><a href="#about">About</a></li>
-                            <li class="nav-item"><a href="#experience">Experience</a></li>
-                            <li class="nav-item"><a href="#projects">Projects</a></li>
+                            <li class="nav-item"><a href="#about"><i class="bi bi-caret-right"></i>About</a></li>
+                            <li class="nav-item"><a href="#experience"><i class="bi bi-caret-right"></i>Experience</a></li>
+                            <li class="nav-item"><a href="#projects"><i class="bi bi-caret-right"></i>Projects</a></li>
 
                         </ul>
                     </nav>
@@ -37,7 +37,28 @@
                         <a href="mailto:mohamedashmar432@gmail.com" target="_blank"><i class="bi bi-envelope-at-fill icon text-white"></i></a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-sm-12 right-col">
+                <div class="col-md-12 col-lg-6 col-sm-12 right-col custom-md-width">
+                    <section class="mobile-hero">
+                        <h1 class="text-start text-white mobile-hero-title">I'm Mohamed Ashmar</h1>
+                        <p class="text-white mobile-hero-role" id="mobile-role">Web Developer</p>
+                        <p class=" mobile-hero-description">A passionate web developer and cybersecurity enthusiast,
+                            dedicated to building innovative web solutions and safeguarding the digital world.</p>
+                        <nav class="mobile-sidebar">
+                            <ul>
+                                <li class="mobile-nav-item"><a href="#about"><i class="bi bi-caret-right"></i>About</a></li>
+                                <li class="mobile-nav-item"><a href="#experience"><i class="bi bi-caret-right"></i>Experience</a></li>
+                                <li class="mobile-nav-item"><a href="#projects"><i class="bi bi-caret-right"></i>Projects</a></li>
+    
+                            </ul>
+                        </nav>
+                        <div class="text-white mobile-social-contact">
+                            <a href="https://www.linkedin.com/in/mohamed-ashmar/" target="_blank"><i class="bi bi-linkedin icon text-white"></i></a>
+                            <a href="https://github.com/Mohamedashmar432" target="_blank"><i
+                                    class="bi bi-github icon text-white"></i></a>
+                            <a href="mailto:mohamedashmar432@gmail.com" target="_blank"><i class="bi bi-envelope-at-fill icon text-white"></i></a>
+                        </div>
+
+                    </section>
                     <section class="about" id="about">
                         <h4 class="text-white text-start about-title">About me</h4>
                         <p class="about-description">
@@ -243,7 +264,7 @@
 
 
                     </section>
-                    <div class="end">
+                    <div class="end text-center">
                         <p>🧑‍💻Designed and Developed by Mohamed ashmar🧑‍💻</p>
                     </div>
 
@@ -258,60 +279,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            const phrases = ["Web Developer", "Back-end Developer", "Cybersecurity Enthusiast"];
-            let currentPhraseIndex = 0;
-            let currentCharacterIndex = 0;
-            const typingSpeed = 100; // Typing speed in ms
-            const pauseBetweenPhrases = 2000; // Pause time before starting delete
-            const $roleElement = $("#role");
-
-            function typePhrase() {
-                const currentPhrase = phrases[currentPhraseIndex];
-                $roleElement.text(currentPhrase.slice(0, currentCharacterIndex++));
-
-                if (currentCharacterIndex <= currentPhrase.length) {
-                    setTimeout(typePhrase, typingSpeed);
-                } else {
-                    setTimeout(() => {
-                        deletePhrase();
-                    }, pauseBetweenPhrases);
-                }
-            }
-
-            function deletePhrase() {
-                const currentPhrase = phrases[currentPhraseIndex];
-                $roleElement.text(currentPhrase.slice(0, currentCharacterIndex--));
-
-                if (currentCharacterIndex >= 0) {
-                    setTimeout(deletePhrase, typingSpeed);
-                } else {
-                    // Move to the next phrase and start typing immediately
-                    currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                    currentCharacterIndex = 0;
-                    typePhrase();
-                }
-            }
-
-            // Start the typing effect
-            typePhrase();
-        });
-
-        $(document).ready(function () {
-            $('.left-col').on('wheel', function (event) {
-                // Prevent default scroll behavior on the left column
-                event.preventDefault();
-                // Scroll the right column instead
-                $('.right-col').scrollTop($('.right-col').scrollTop() + event.originalEvent.deltaY);
-            });
-        });
-
-
-
-
-
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
