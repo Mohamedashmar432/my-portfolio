@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const phrases = ["Web Developer", "Back-end Developer"];
+    const phrases = ["Cybersecurity engineer", "Back-end Developer"];
     let currentPhraseIndex = 0;
     let currentCharacterIndex = 0;
     const typingSpeed = 100; // Typing speed in ms
